@@ -14,11 +14,14 @@ public class Box<T extends Fruit> {
     }
 
     public float getWeight() {
+        if (arrayList.isEmpty()) {
+            return 0;
+        }
         return arrayList.size() * arrayList.get(0).getWeight();
     }
 
     public boolean compare(Box<? extends Fruit> otherBox) {
-        return this.getWeight() == otherBox.getWeight();
+        return getWeight() == otherBox.getWeight();
     }
 
     public void add(T element) {
@@ -26,8 +29,8 @@ public class Box<T extends Fruit> {
     }
 
     public void addAll(Box<T> otherBox) {
-        otherBox.getArrayList().addAll(arrayList);
-        this.arrayList.clear();
+        arrayList.addAll(otherBox.arrayList);
+        otherBox.arrayList.clear();
     }
 
     public String info() {
