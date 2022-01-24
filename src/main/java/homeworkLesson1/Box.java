@@ -32,7 +32,7 @@ public class Box<T extends Fruit> {
 
     public String info() {
         if (!arrayList.isEmpty()) {
-            return "The box contains " + arrayList.get(0).toString() + " in quantity:" + arrayList.size();
+            return "The box contains " + this.toString() + " in quantity:" + arrayList.size();
         }
         return "The box is empty";
     }
