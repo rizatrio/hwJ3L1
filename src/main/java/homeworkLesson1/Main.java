@@ -26,20 +26,20 @@ public class Main {
 
 
         //task3
-        Apple apple = new Apple(1.0f);
-        Orange orange = new Orange(3.0f);
+//        Apple apple = new Apple(1.0f);
+//        Orange orange = new Orange(3.0f);
 
         Box<Apple> appleBox = new Box<>();
         Box<Apple> appleBox2 = new Box<>();
         Box<Orange> orangeBox = new Box<>();
 
         for (int i = 0; i < 3; i++) {
-            appleBox.add(apple);
-            appleBox2.add(apple);
+            appleBox.add(new Apple());
+            appleBox2.add(new Apple());
         }
 
         for (int i = 0; i < 4; i++) {
-            orangeBox.add(orange);
+            orangeBox.add(new Orange());
         }
 
         System.out.println("The weight of the box with apples: " + appleBox.getWeight());
@@ -51,7 +51,7 @@ public class Main {
 
 
         appleBox.addAll(appleBox2);
-        orangeBox.add(orange);
+        orangeBox.add(new Orange());
 
         System.out.println(appleBox.info());
         System.out.println(appleBox2.info());

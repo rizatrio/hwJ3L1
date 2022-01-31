@@ -16,8 +16,13 @@ public class Box<T extends Fruit> {
     public float getWeight() {
         if (arrayList.isEmpty()) {
             return 0;
+        } else {
+            if (arrayList.get(0) instanceof Orange) {
+                return arrayList.size() * 1.5f;
+            } else {
+                return arrayList.size();
+            }
         }
-        return arrayList.size() * arrayList.get(0).getWeight();
     }
 
     public boolean compare(Box<? extends Fruit> otherBox) {
